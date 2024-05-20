@@ -8,30 +8,101 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.payment-section {  
-    height: auto;
-    
+/*   why section */
+
+.why {
+    padding: 2rem;
+    color: rgb(78, 78, 161);
 }
 
-.payment-div {
-    background: linear-gradient(to right, #303030 0%, #212529 100%);
+.why-h{
+    padding-top: 2rem;
+}
+
+.why-p {
+    padding-top: 1rem;
+}
+
+.why-p1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/*    caurosel section    */
+
+
+
+img {
+    max-height: 40vh;
+    max-width: auto;
+    min-width: auto;
+    border-radius: 8px;
+}
+
+.img-s {
+    overflow:hidden ;
+}
+
+
+/*    learn section   */
+
+.learn-section {
+    background-color: rgb(38, 38, 211);
     min-height: 60vh;
-    border-radius: 10px;
-    margin: 10rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+    margin-top: 5rem;
+    justify-content: space-around;
 }
 
-.p-h1 {
+.l-h {
     padding: 3rem;
 }
 
-.instagram {
-    padding-top: 3rem;
-
+span {
+    color: rgb(247, 216, 39);
 }
 
-.p-p {
-    padding-top: 0.5rem;
+li {
+    padding: 1rem;
+}
+
+.learn-img {
+    margin-right: 5rem;
+    margin-top: 2rem;
+}
+
+.l-img {
+    max-height: 50vh;
+    width: auto;
+}
+
+
+
+/*    Lity section  */
+
+.lity-section {
+    display: flex;
+    justify-content: space-around;
+}
+
+.lity-logo {
+    padding: 1rem;
+    margin-bottom: 5rem;
+}
+
+.careerlity {
+    padding-right: 15rem;
+    padding-left: 8rem;
+}
+
+.lity-p {
+    padding-bottom: 5rem ;
+}
+
+
+.lity-img {
+    margin-right: 5rem;
+    max-height: 60vh;
+    max-width: 50vw;
 }
 
 .p-btn {
@@ -61,121 +132,121 @@
   }
 
 
-  /*   media query  */
 
-  @media (min-width: 1px) and (max-width: 575px) {
 
-    .payment-div {
-        padding: auto;
+/*  image caurosel */
+
+
+.pic-ctn {
+    width: 100vw;
+    height: 200px;
+  }
+  
+  @keyframes display {
+    0% {
+      transform: translateX(200px);
+      opacity: 0;
     }
-
-    .p-h1 {
-        font-size: 25px;
+    10% {
+      transform: translateX(0);
+      opacity: 1;
     }
-
-    .p-h6 {
-        font-size: 20px;
+    20% {
+      transform: translateX(0);
+      opacity: 1;
     }
-
-}
-
-@media (min-width: 1px) and (max-width: 485px) {
-
-    .p-btn {
-       margin-left: 10px;
-       font-size: 15px;
-       max-width: 85px;
+    30% {
+      transform: translateX(-200px);
+      opacity: 0;
     }
-
-    .p-p {
-        font-size: 15px;
+    100% {
+      transform: translateX(-200px);
+      opacity: 0;
     }
-}
+  }
+  
+  .pic-ctn {
+    position: relative;
+    width: 100vw;
+    height: 300px;
+    margin-top: 15vh;
+  }
+  
+  .pic-ctn > img {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 100px);
+    opacity: 0;
+    animation: display 10s infinite;
+  }
+  
+  img:nth-child(2) {
+    animation-delay: 2s;
+  }
+  img:nth-child(3) {
+    animation-delay: 4s;
+  }
+  img:nth-child(4) {
+    animation-delay: 6s;
+  }
+  img:nth-child(5) {
+    animation-delay: 8s;
+  }
 
-@media (min-width: 1px) and (max-width: 445px) {
 
-    .p-btn {
-        margin-left: 8px;
-        font-size: 13px;
-        max-width: 80px;
-     }
- 
-     .p-p {
-         font-size: 13px;
-     }
+    /*       media query       */
 
-     .p-h1 {
-        font-size: 20px;
-    }
-
-    .p-h6 {
-        font-size: 15px;
-    }
+    @media (min-width: 992px) {
+        img {
+            max-height: 30vh;
+        }
     
-}
-
-@media (min-width: 1px) and (max-width: 392px) {
-
-    .p-btn {
-        margin-left: 6px;
-        font-size: 10px;
-        max-width: 70px;
-     }
- 
-     .p-p {
-         font-size: 11px;
-     }
-
-     .p-h1 {
-        font-size: 18px;
-    }
-
-    .p-h6 {
-        font-size: 13px;
-    }
+        .learn-section {
+            display: flex;
+        }
+      }
     
-}
-
-@media (min-width: 1px) and (max-width: 337px) {
-
-    .p-btn {
-        margin-left: 5px;
-        font-size: 10px;
-        max-width: 70px;
-     }
- 
-     .p-p {
-         font-size: 10px;
-     }
-
-     .p-h1 {
-        font-size: 20px;
-    }
-
-    .p-h6 {
-        font-size: 15px;
-    }
+      @media (max-width: 992px) {
+        .learn-section {
+            min-height: 120vh;
+            max-height: auto;
+            overflow: hidden;
+        }
     
-}
-
-@media (min-width: 1px) and (max-width: 315px) {
-
-    .p-btn {
-        font-size: 10px;
-        max-width: 60px;
-     }
- 
-     .p-p {
-         font-size: 10px;
-     }
+        .learn-img {
+            margin: 3rem;
     
-}
+        }
 
-@media (min-width: 1px) and (max-width: 305px) {
+        .lity-section {
+            display: block;
+        }
 
-.instagram {
-    display: grid;
-}
- 
+        .lity-logo {
+            padding: 3rem;
+        }
+
+        .careerlity {
+            padding: 5rem;
+        }
+
+        .career-img {
+            margin-left: 6rem;
+        }
+      }
     
-}
+      @media (max-width: 500px) {
+        .learn-section {
+            min-height: 150vh;
+        }
+
+        .careerlity {
+            padding: 3rem;
+        }
+      }
+
+      @media (max-width: 375px) {
+        .career-img {
+            margin-left: 4rem;
+        }
+      }
